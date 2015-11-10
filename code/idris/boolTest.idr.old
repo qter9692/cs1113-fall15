@@ -1,0 +1,135 @@
+import bool
+import pair
+import nat
+
+--#1 given a pair of bool values, (a, b), return true if both a and b are true, otherwise return false
+
+|||a test, expecting true
+a1:bool
+a1 = andp(mkPair true true)
+|||a test, expecting false
+a2:bool
+a2 = andp(mkPair false true)
+|||a test,expecting false
+a3: bool
+a3 = andp(mkPair true false)
+|||a test,expecting false
+a4: bool
+a4 = andp(mkPair false false)
+
+
+
+--#2 given a pair of bool values, (a, b), return false if both a and b are false, otherwise return true
+|||a test, expecting false
+o1:bool
+o1= orp(mkPair false false)
+||| a test, expecting true
+o2:bool
+o2= orp(mkPair true false)
+||| a test, expecting true
+o3:bool
+o3= orp(mkPair true true)
+|||a test, expecting true
+o4:bool
+o4= orp(mkPair false true)
+
+ --#3 short for "not and", given a pair of bool values, (a, b), return false if both a and b are true, and false otherwise
+
+|||a test, expecting false
+n1:bool
+n1 =nandp (mkPair true true)
+|||a test, expecting true
+n2:bool
+n2 = nandp (mkPair false true)
+|||a test, expecting true
+n3:bool
+n3= nandp(mkPair true false)
+|||a test, expecting true
+n4:bool
+n4= nandp (mkPair false false)
+
+
+--#4 short for "exclusive or", given a pair of bool values, (a, b), return true if exactly one of a or b is true, and false otherwise  
+||| a test, expecting true
+x1:bool
+x1= xorp(mkPair true false)
+||| a test, expecting true
+x2:bool
+x2= xorp(mkPair false true)
+|||a test, expecting false
+x3:bool
+x3= xorp(mkPair false false)
+|||a test, expecting false
+x4:bool
+x4= xorp(mkPair true true)
+
+
+--Exam#4 
+--test for 4a
+pand_t_t :bool
+pand_t_t = pand true true 
+--expect true
+
+pand_t_f:bool
+pand_t_f = pand true false
+--expect false
+
+pand_f_t:bool
+pand_f_t = pand false true
+--expect false
+
+pand_f_f:bool
+pand_f_f = pand false false
+--expect false
+
+--#4b
+por_t_t:bool
+por_t_t = por true true
+--expect true
+
+por_t_f:bool
+por_t_f = por true false
+--expect true
+
+por_f_t:bool
+por_f_t = por false true
+--expect true
+
+por_f_f: bool
+por_f_f = por false false
+--expect false
+
+--#4c
+pxor_t_t:bool
+pxor_t_t = pxor true true
+--expect false
+
+pxor_t_f:bool
+pxor_t_f = pxor true false
+--expect true
+
+pxor_f_t:bool
+pxor_f_t = pxor false true
+--expect true
+
+pxor_f_f:bool
+pxor_f_f = pxor false false
+--expect false
+
+--#4d
+pnand_t_t:bool
+pnand_t_t = pnand true true
+--expect false
+
+pnand_t_f:bool
+pnand_t_f = pnand true false
+--expect true
+
+pnand_f_t:bool
+pnand_f_t = pnand false true
+--expect true
+
+pnand_f_f:bool
+pnand_f_f = pnand false false
+--expect true
+
